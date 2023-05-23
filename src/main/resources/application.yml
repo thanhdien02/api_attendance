@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: api_android
+  data:
+    mongodb:
+      uri: mongodb://${MONGO_HOST:localhost}:${MONGO_PORT:27017}/cham-cong-db
+  profiles:
+    active: ${ACTIVE_PROFILE:dev}
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 15MB
+
+jwt:
+  secret: QmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6
+server:
+  error:
+    include-message: always
+google:
+  verifyUrl: https://www.googleapis.com/oauth2/v3/userinfo?access_token=
+logging:
+  file:
+    name: logs/pet-love.log
+  level:
+    org:
+      springframework:
+        cache: error
+  logback:
+    rollingpolicy:
+      clean-history-on-start: true
+      max-file-size: 100MB
+      max-history: 7
+  pattern:
+    file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n'
+paging:
+  default:
+    page: 0
+    size: 20
