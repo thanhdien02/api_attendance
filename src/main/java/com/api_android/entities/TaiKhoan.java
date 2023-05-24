@@ -25,7 +25,7 @@ public class TaiKhoan {
 
     // email không được trùng nhau
     private String email;
-    @JsonIgnore
+
     private String password;
 
     private String dienThoai;
