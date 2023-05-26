@@ -41,9 +41,9 @@ public class ChamCongServiceImp implements ChamCongService{
         if (ObjectUtils.isEmpty(dto.getMaNhanVien())) {
             throw new InvalidException("Mã nhân viên không được bỏ trống");
         }
-        if (ObjectUtils.isEmpty(dto.getNgayChamCong())) {
-            throw new InvalidException("Ngày chấm công không được bỏ trống");
-        }
+//        if (ObjectUtils.isEmpty(dto.getNgayChamCong())) {
+//            throw new InvalidException("Ngày chấm công không được bỏ trống");
+//        }
 
         ChamCong chamCong = new ChamCong();
         chamCong.setTen(dto.getTen().trim());

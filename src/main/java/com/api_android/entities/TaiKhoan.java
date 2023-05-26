@@ -25,7 +25,6 @@ public class TaiKhoan {
 
     // email không được trùng nhau
     private String email;
-
     private String password;
 
     private String dienThoai;

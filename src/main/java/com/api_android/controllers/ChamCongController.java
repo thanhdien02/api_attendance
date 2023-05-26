@@ -34,19 +34,19 @@ public class ChamCongController {
     public ResponseEntity<List<ChamCong>> getAll() {
         return new ResponseEntity<>(chamCongService.getAll(), HttpStatus.OK);
     }
-    @PreAuthorize("hasRole('ADMIN')")
+
     @PostMapping
     public ResponseEntity<ChamCong> create(@Valid @RequestBody ChamCongDto dto) {
         return new ResponseEntity<>(chamCongService.create(dto), HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+
     @PutMapping("/{id}")
     public ResponseEntity<ChamCong> update(@PathVariable String id, @Valid @RequestBody ChamCongDto dto) {
         return new ResponseEntity<>(chamCongService.update(id, dto), HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+
     @DeleteMapping("/{id}")
     public ResponseEntity<ChamCong> delete(@PathVariable String id) {
         return new ResponseEntity<>(chamCongService.delete(id), HttpStatus.OK);
