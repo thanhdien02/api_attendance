@@ -44,7 +44,23 @@ public class ChamCongServiceImp implements ChamCongService{
 //        if (ObjectUtils.isEmpty(dto.getNgayChamCong())) {
 //            throw new InvalidException("Ngày chấm công không được bỏ trống");
 //        }
+//
+//        Kiem tra moi nhan vien moi ngay chi cham cong 1 lan ma thoi.
 
+        String ngaychamcong = dto.getNgayChamCong();
+        String[] arr = ngaychamcong.split("/");
+
+        List<ChamCong> lsChamCong = getAll();
+
+        for (int i = 0; i < lsChamCong.size(); i++)
+        {
+            String ngaychamcongdb = lsChamCong.get(i).getNgayChamCong();
+            String[] arrdb = ngaychamcongdb.split("/");
+            if(arr[0].equals(arrdb[0]) && arr[1].equals(arrdb[1]))
+            {
+                throw new InvalidException("Mỗi nhân viên chỉ được chấm công 1 lần mỗi ngày");
+            }
+        }
         ChamCong chamCong = new ChamCong();
         chamCong.setTen(dto.getTen().trim());
         chamCong.setNgayChamCong(dto.getNgayChamCong());
