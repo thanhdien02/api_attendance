@@ -29,6 +29,7 @@ public class TaiKhoan {
 
     private String dienThoai;
 
+    private Double luong;
     private List<String> roles = new ArrayList<>();
 
     private boolean trangThai = true;
