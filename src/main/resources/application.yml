@@ -10,5 +10,3 @@ jwt:
 server:
   error:
     include-message: always
-  port: ${PORT:8080}
-
