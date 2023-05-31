@@ -37,6 +37,7 @@ public class LuongNhanVienServiceImpl implements LuongNhanVienService{
         double luongCung;
         double luongTrongThang;
 
+//        LuongNhanVien luongNhanVien = luongNhanVienRepository.
         YearMonth yearMonth = YearMonth.of(year,month);
         soNgayTrongThang = yearMonth.lengthOfMonth();
 
@@ -46,11 +47,11 @@ public class LuongNhanVienServiceImpl implements LuongNhanVienService{
 
         Pattern regexPattern = Pattern.compile(String.format("^(\\d{2}/%02d/%04d \\d{2}:\\d{2}:\\d{2})$", month, year));
         List<ChamCong> chamCongList = chamCongRepository.findByNgayChamCongRegex(regexPattern);
-        soNgayCong = chamCongList.size();
 
+        soNgayCong = chamCongList.size();
         soNgayNghi = soNgayTrongThang - soNgayCong;
         luongCung = nhanVien.getLuong();
-        luongTrongThang =  luongCung - ((luongCung/soNgayTrongThang) );
+        luongTrongThang =  luongCung - ((luongCung/soNgayTrongThang)*soNgayNghi);
 
         return null;
     }

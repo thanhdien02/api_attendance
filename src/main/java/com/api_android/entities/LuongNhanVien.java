@@ -22,5 +22,7 @@ public class LuongNhanVien {
 
     private String nam;
 
+    private Integer ngayNghi;
+
     private String maNhanVien;
 }
