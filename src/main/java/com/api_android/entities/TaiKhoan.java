@@ -30,10 +30,6 @@ public class TaiKhoan {
     private String dienThoai;
 
     private Double luong;
-<<<<<<< HEAD
-
-=======
->>>>>>> bac6b745cfd253a3144de5dfa6c6dd9f6557cc90
     private List<String> roles = new ArrayList<>();
 
     private boolean trangThai = true;
