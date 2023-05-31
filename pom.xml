@@ -71,5 +71,10 @@
             <artifactId>javaee-web-api</artifactId>
             <version>8.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.heroku</groupId>
+            <artifactId>webapp-runner</artifactId>
+            <version>9.0.41.0</version>
+        </dependency>
     </dependencies>
 </project>
