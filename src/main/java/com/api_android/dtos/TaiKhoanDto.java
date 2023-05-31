@@ -26,7 +26,5 @@ public class TaiKhoanDto {
 
     private String dienThoai;
 
-    private Double luong;
-
     private List<String> roles = new ArrayList<>();
 }

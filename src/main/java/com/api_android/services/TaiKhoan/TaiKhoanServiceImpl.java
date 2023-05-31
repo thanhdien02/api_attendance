@@ -98,7 +98,6 @@ public class TaiKhoanServiceImpl implements TaiKhoanService{
         }
         taiKhoan.setName(dto.getName().trim());
         taiKhoan.setEmail(dto.getEmail().trim());
-        taiKhoan.setLuong(dto.getLuong());
         taiKhoan.setPassword(dto.getPassword());
         taiKhoan.setDienThoai(dto.getDienThoai().trim());
         taiKhoan.setRoles(dto.getRoles());
