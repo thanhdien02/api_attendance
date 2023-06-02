@@ -34,12 +34,12 @@ public class LuongServiceImp implements LuongService{
     }
 
     @Override
-    public Boolean getByMaThang(String manv, int thang) {
+    public Boolean getByMaThang(String manv, int thang, int nam) {
         List<Luong> lsluong = luongRepository.findAll();
 
         for(int i = 0 ; i < lsluong.size(); i++)
         {
-            if(manv.equals(lsluong.get(i).getMaNhanVien()) && thang == lsluong.get(i).getThang())
+            if(manv.equals(lsluong.get(i).getMaNhanVien()) && thang == lsluong.get(i).getThang() && nam == lsluong.get(i).getNam())
             {
                 return true;
             }
@@ -72,7 +72,8 @@ public class LuongServiceImp implements LuongService{
                 System.out.println("Day a: " + laythang);
                 String[] arr = laythang.split("/");
 
-                if(dto.getThang() == Integer.parseInt(arr[1]) && dto.getMaNhanVien().equals(lschamcong.get(i).getMaNhanVien()))
+                String nam = arr[2].substring(0, 4);
+                if(dto.getThang() == Integer.parseInt(arr[1]) && dto.getMaNhanVien().equals(lschamcong.get(i).getMaNhanVien()) && dto.getNam() == Integer.parseInt(nam))
                 {
                     ngaylam++;
                 }
@@ -80,7 +81,7 @@ public class LuongServiceImp implements LuongService{
             }
         }
 
-        if(getByMaThang(dto.getMaNhanVien(), dto.getThang()))
+        if(getByMaThang(dto.getMaNhanVien(), dto.getThang(), dto.getNam()))
         {
             throw new InvalidException("Nhân viên này đã tính lương trong tháng rồi");
         }

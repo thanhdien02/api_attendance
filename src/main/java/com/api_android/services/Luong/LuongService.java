@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface LuongService {
 
-    Boolean getByMaThang(String manv, int thang);
+    Boolean getByMaThang(String manv, int thang, int nam);
     Luong getLuong(String id);
 
     Luong create (LuongDto dto);
