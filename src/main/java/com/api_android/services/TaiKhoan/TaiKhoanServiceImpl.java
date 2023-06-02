@@ -42,9 +42,7 @@ public class TaiKhoanServiceImpl implements TaiKhoanService{
         if (ObjectUtils.isEmpty(dto.getEmail())) {
             throw new InvalidException("Email không được bỏ trống");
         }
-        if (ObjectUtils.isEmpty(dto.getPassword())) {
-            throw new InvalidException("Mật khẩu không được bỏ trống");
-        }
+
         if (ObjectUtils.isEmpty(dto.getDienThoai())) {
             throw new InvalidException("Điện thoại không được bỏ trống");
         }
@@ -68,6 +66,7 @@ public class TaiKhoanServiceImpl implements TaiKhoanService{
         taiKhoan.setEmail(dto.getEmail().trim());
         taiKhoan.setPassword(dto.getPassword());
         taiKhoan.setDienThoai(dto.getDienThoai().trim());
+        taiKhoan.setLuong(dto.getLuong());
         taiKhoan.setRoles(dto.getRoles());
         taiKhoanRepository.save(taiKhoan);
         return taiKhoan;

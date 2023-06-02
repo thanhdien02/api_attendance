@@ -17,6 +17,7 @@ public class ChamCongServiceImp implements ChamCongService{
 
     private final ChamCongRepository chamCongRepository;
 
+
     public ChamCongServiceImp(ChamCongRepository chamCongRepository) {
         this.chamCongRepository = chamCongRepository;
     }
