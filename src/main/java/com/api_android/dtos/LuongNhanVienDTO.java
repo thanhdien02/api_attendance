@@ -1,20 +1,15 @@
-package com.api_android.entities;
+package com.api_android.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "luong-nhan-vien")
-public class LuongNhanVien {
-    @Id
-    private String id;
+public class LuongNhanVienDTO {
 
     private Double luong;
 
@@ -29,4 +24,5 @@ public class LuongNhanVien {
     private String maNhanVien;
 
     private String tenNhanVien;
+
 }
