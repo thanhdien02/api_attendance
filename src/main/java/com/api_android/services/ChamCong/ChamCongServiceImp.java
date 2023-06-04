@@ -57,7 +57,7 @@ public class ChamCongServiceImp implements ChamCongService{
         {
             String ngaychamcongdb = lsChamCong.get(i).getNgayChamCong();
             String[] arrdb = ngaychamcongdb.split("/");
-            if(arr[0].equals(arrdb[0]) && arr[1].equals(arrdb[1]))
+            if(arr[0].equals(arrdb[0]) && arr[1].equals(arrdb[1]) && dto.getMaNhanVien().equals(lsChamCong.get(i).getMaNhanVien()))
             {
                 throw new InvalidException("Mỗi nhân viên chỉ được chấm công 1 lần mỗi ngày");
             }
